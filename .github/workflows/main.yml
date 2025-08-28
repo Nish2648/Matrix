@@ -2,7 +2,7 @@ name: matrix strategy
 on:
  push:
   branches:
-   -main
+   - main
 jobs:
   test:
     name: test node version ${{ matrix.node-version }}
@@ -15,4 +15,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          run: echo "Version ${{ matrix.node-version }}"
+         
+      - name: Echo version
+        run: echo "Version ${{ matrix.node-version }}"
